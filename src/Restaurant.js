@@ -6,7 +6,7 @@ class Restaurant {
     this.image = image;
     this.menus = [];
   }
-  listeMenu(menu) {
+  addMenu(menu) {
     this.menus.push(menu);
   }
   save(cb) {
