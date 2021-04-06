@@ -4,7 +4,7 @@ class Item {
     this.name = name;
     this.price = price;
   }
-  addItem(cb) {
+  save(cb) {
     db.run(
       "INSERT INTO Item (name, price) VALUES (?,?)",
       [this.name, this.price],

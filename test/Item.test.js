@@ -13,7 +13,7 @@ describe("Basic item Test", () => {
   test("can save item data", (done) => {
     const item = new Item("Spaghetti", 10);
     //Act
-    item.addItem(() => {
+    item.save(() => {
       db.get("SELECT * FROM Item WHERE name=?", ["Spaghetti"], (err, row) => {
         // Assign
         expect(row.name).toEqual("Spaghetti");

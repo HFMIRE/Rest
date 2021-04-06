@@ -13,7 +13,7 @@ describe("Basic menu Test", () => {
   test("can save menu data", (done) => {
     const menu = new Menu("Starter", "🥣");
     //Act
-    menu.addMenu(() => {
+    menu.save(() => {
       db.get("SELECT * FROM Menu WHERE title=?", ["Starter"], (err, row) => {
         // Assign
         expect(row.icon).toEqual("🥣");

@@ -4,11 +4,10 @@ describe("basic ORM test", () => {
   test("testing the methods", (done) => {
     // Arrange
     const pasta = new ORM("Product", "Lasanga", 11);
-
     // Act
-    pasta.createTable();
-    pasta.insertItem();
-    pasta.selectItem(() => {
+    pasta.create();
+    pasta.insert();
+    pasta.select(() => {
       (err, row) => {
         // Assert
         expect(row.name).toEqual("Lasanga");

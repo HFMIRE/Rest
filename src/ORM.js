@@ -7,7 +7,7 @@ class ORM {
     this.price = price;
   }
 
-  createTable(cb) {
+  create(cb) {
     const use = [
       "id INTEGER PRIMARY KEY",
       "name TEXT",
@@ -17,7 +17,7 @@ class ORM {
     // create a method that creates a new table - create table
     db.run(`CREATE TABLE IF NOT EXISTS ${this.table} (${use.join(" , ")})`, cb);
   }
-  insertItem(cb) {
+  insert(cb) {
     // be able to add new row data to the table - insert into
     db.run(
       `INSERT INTO ${this.table} (name, price) VALUES (?,?)`,
@@ -25,7 +25,7 @@ class ORM {
       cb
     );
   }
-  selectItem(cb) {
+  select(cb) {
     //filter the rows from the table - select
     db.get(`SELECT * FROM ${this.table} WHERE name=?`, [this.name], cb);
   }
